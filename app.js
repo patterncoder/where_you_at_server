@@ -6,13 +6,15 @@
 var express = require('express');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-var routes = require('./routes');
+
 
 var bodyParser = require('body-parser');
 
 var app = express();
 var config = require('./config')[env];
 require('./mongoose')(config);
+var routes = require('./routes');
+console.log(config.db)
 // all environments
 app.set('port', process.env.PORT || 3000);
 

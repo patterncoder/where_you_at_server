@@ -2,7 +2,14 @@
 /*
  * GET home page.
  */
+var User = require('mongoose').model('User');
+
+
 
 exports.index = function(req, res){
-  res.send({ title: 'Express' });
+    User.find({}).exec(function(err, collection){
+        res.send(collection);
+        }
+    )
+    
 };
