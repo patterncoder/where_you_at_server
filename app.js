@@ -4,19 +4,18 @@
  */
 
 var express = require('express');
+
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var routes = require('./routes');
 
 var bodyParser = require('body-parser');
-var http = require('http');
-var path = require('path');
-var router = express.Router();
 
 var app = express();
-
+var config = require('./config')[env];
+require('./mongoose')(config);
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 //app.use(express.static(path.join(__dirname, 'public')));
@@ -29,6 +28,5 @@ app.use(bodyParser.urlencoded());
 app.get('/', routes.index);
 
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+app.listen(app.get('port'));
+console.log('Express server listening on port ' + app.get('port'));
