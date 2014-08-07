@@ -27,7 +27,10 @@ app.use(bodyParser.urlencoded());
 //  app.use(express.errorHandler());
 //}
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
+app.get('/', function (req, res) {
+    res.send("hello");
+});
 
 
 app.listen(config.port);
