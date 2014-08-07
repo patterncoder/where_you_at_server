@@ -10,13 +10,13 @@ var port = process.env.PORT || 1337;
 
 var express = require('express');
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+//var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 //var bodyParser = require('body-parser');
 
 var app = express();
-var config = require('./config')[env];
+//var config = require('./config')[env];
 //require('./mongoose')(config);
 //var routes = require('./routes');
 //console.log(config.db)
@@ -39,4 +39,4 @@ app.get('/', function (req, res) {
 
 
 app.listen(port);
-console.log('Express server listening on port ' + config.port);
+//console.log('Express server listening on port ' + config.port);
