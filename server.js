@@ -17,14 +17,14 @@ var bodyParser = require('body-parser');
 
 var app = express();
 var config = require('./config')[env];
-require('./mongoose')(config);
-var routes = require('./routes');
+//require('./mongoose')(config);
+//var routes = require('./routes');
 //console.log(config.db)
 //// all environments
 //app.set('port', process.env.PORT || 3000);
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded());
 ////app.use(express.static(path.join(__dirname, 'public')));
 
 //// development only
