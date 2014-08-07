@@ -30,5 +30,5 @@ app.use(bodyParser.urlencoded());
 app.get('/', routes.index);
 
 
-app.listen(app.get('port'));
+app.listen(config.port);
 console.log('Express server listening on port ' + app.get('port'));
