@@ -16,7 +16,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 //var bodyParser = require('body-parser');
 
 var app = express();
-//var config = require('./config');
+var config = require('./config/config');
 //var config = require('./config')[env];
 //require('./mongoose')(config);
 //var routes = require('./routes');
