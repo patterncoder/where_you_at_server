@@ -17,9 +17,10 @@ var routes = require('./routes');
 // set up express to use the bodyParser we required above
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-// just to get things working send back a mongoose query
+
+// bring in the routes by passing in the app which will register all the routes to listen for
 require('./config/routes')(app);
-//app.get('/', routes.index);
+
 
 // config is done so start listening on the port specified in the config file
 app.listen(config.port);
