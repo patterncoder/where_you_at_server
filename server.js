@@ -1,43 +1,26 @@
-//var http = require('http')
-//var port = process.env.PORT || 1337;
-//http.createServer(function (req, res) {
-//    res.writeHead(200, { 'Content-Type': 'text/plain' });
-//    res.end('Hello World\n');
-//}).listen(port);
-///**
-// * Module dependencies.
-// */
 
+// require express
 var express = require('express');
- 
+// set env variable to production or development
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-
+// express does not ship with body parser...load in connect body parser
 var bodyParser = require('body-parser');
-
+// fire up express
 var app = express();
-//var config = require('./config/config');
+// bring back a config object based on the environment we are in
 var config = require('./config/config')[env];
+// fire up mongoose according to our config object based on environment
 require('./mongoose')(config);
+// bring in all files from the routes folder
 var routes = require('./routes');
-//console.log(config.db)
-//// all environments
-//app.set('port', process.env.PORT || 3000);
-
+// set up express to use the bodyParser we required above
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-////app.use(express.static(path.join(__dirname, 'public')));
+// just to get things working send back a mongoose query
+require('./config/routes')(app);
+//app.get('/', routes.index);
 
-//// development only
-////if ('development' == app.get('env')) {
-////  app.use(express.errorHandler());
-////}
-
-app.get('/', routes.index);
-//app.get('/', function (req, res) {
-//    res.send("hello");
-//});
-
-
+// config is done so start listening on the port specified in the config file
 app.listen(config.port);
 console.log('Express server listening on port ' + config.port);
