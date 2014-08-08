@@ -61,4 +61,3 @@ build/Release
 node_modules
 
 # Config file with secret keys
-config.js
