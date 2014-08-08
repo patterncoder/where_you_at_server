@@ -6,8 +6,8 @@ var userSchema = mongoose.Schema({
     emailAddress: { type: String, validate: validate.validators.emailValidator },
     phoneNumber: String,
     meetupId: String,
-    createdTimeStamp: Date,
-    meetupId: String
+    createdTimeStamp: { type: Number, default: (new Date()).getTime() }
+    
 
 });
 
@@ -19,7 +19,25 @@ function createDefaultUsers() {
     User.find({}).exec(function(err,collection){
         if(collection.length ===0) {
             
-            User.create({ contactName: "Chris Baily", meetupId: "myId1" }, function (err) {
+            User.create({
+                contactName: "Chris Baily",
+                meetupId: "myId1",
+                emailAddress: "chris@chris.com",
+                phoneNumber:"951-699-3315"
+                
+            }, function (err) {
+                if (err) {
+                    console.log(err.errors);
+                }
+
+            });
+            User.create({
+                contactName: "Alex Maltsev",
+                meetupId: "myId2",
+                emailAddress: "alex@alex.com",
+                phoneNumber: "951-676-9567"
+                
+            }, function (err) {
                 if (err) {
                     console.log(err.errors);
                 }
