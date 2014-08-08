@@ -17,7 +17,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 //var config = require('./config/config');
-//var config = require('./config')[env];
+var config = require('./config/config')[env];
 //require('./mongoose')(config);
 //var routes = require('./routes');
 //console.log(config.db)
@@ -40,4 +40,4 @@ app.get('/', function (req, res) {
 
 
 app.listen(port);
-//console.log('Express server listening on port ' + config.port);
+console.log('Express server listening on port ' + config.port);
