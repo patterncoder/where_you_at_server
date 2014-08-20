@@ -10,13 +10,19 @@ var bodyParser = require('body-parser');
 var app = express();
 // bring back a config object based on the environment we are in
 var config = require('./config/config')[env];
+
 // fire up mongoose according to our config object based on environment
 require('./mongoose')(config);
 // bring in all files from the routes folder
-var routes = require('./routes');
+//var routes = require('./routes');
 // set up express to use the bodyParser we required above
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+
+app.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return next();
+});
 
 // bring in the routes by passing in the app which will register all the routes to listen for
 require('./config/routes')(app);

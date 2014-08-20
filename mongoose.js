@@ -17,8 +17,7 @@ module.exports = function (config) {
 
     //create the mock data here.
     userModel.createDefaultUsers();
-    //contractModel.createDefaultContracts();
-    //customerModel.createDefaultCustomers();
+    
 
 
 
