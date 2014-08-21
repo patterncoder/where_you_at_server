@@ -17,7 +17,7 @@ exports.getUserById = function (req, res) {
 }
 
 exports.getMeetupInfo = function (req, res) {
-    request('http://api.meetup.com/2/members/?group_id=1667332&only=id,name,photo&key=41437d18354d7929412b7367732333', function (error, response, body) {
+    request('http://api.meetup.com/2/members/?group_id=1667332&only=id,name,photo,city,state&key=41437d18354d7929412b7367732333', function (error, response, body) {
         if (!error && response.statusCode == 200) {
             res.send(body);
         }
