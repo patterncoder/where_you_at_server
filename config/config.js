@@ -16,6 +16,6 @@ module.exports = {
 
 
     // use below command to connect mongo shell to mongolab
-    // mongo ds030607.mongolab.com:30607/tipminer -u patterncoder -p y5EQJ5m7C3
+    // mongo ds050087.mongolab.com:50087/whereyouat2 -u whereyouat2 -p tvsd_20!4
 
 }

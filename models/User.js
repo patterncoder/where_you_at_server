@@ -25,7 +25,7 @@ function createDefaultUsers() {
             
             User.create({
                 name: "Alex Maltsev",
-                meetupId: 125702562,
+                id: 125702562,
                 emailAddress: "alex@alex.com",
                 photo: {
                     photo_link: "http:\/\/photos2.meetupstatic.com\/photos\/member\/4\/0\/3\/0\/member_171256432.jpeg",
@@ -45,7 +45,7 @@ function createDefaultUsers() {
 
             User.create({
                 name: "Chris Baily",
-                meetupId: 68342152,
+                id: 68342152,
                 emailAddress: "chris@chris.com",
                 photo: {
                     photo_link: "http:\/\/photos3.meetupstatic.com\/photos\/member\/9\/e\/e\/member_80282542.jpeg",
