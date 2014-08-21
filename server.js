@@ -12,7 +12,7 @@ var app = express();
 var config = require('./config/config')[env];
 
 // fire up mongoose according to our config object based on environment
-require('./mongoose')(config);
+require('./config/mongoose')(config);
 // bring in all files from the routes folder
 //var routes = require('./routes');
 // set up express to use the bodyParser we required above

@@ -1,6 +1,6 @@
 ﻿// here is where mongoose gets the models wired up
 var mongoose = require('mongoose');
-var userModel = require('./models/User');
+var userModel = require('../models/User');
     //contractModel = require('../models/Contract'),
     //companyModel = require('../models/Company'),
     //customerModel = require('../models/Customer'),

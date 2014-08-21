@@ -5,6 +5,7 @@ module.exports = function (app) {
     app.get('/', index.index)
     app.get('/users', users.getUsers);
     app.get('/users/:id', users.getUserById);
+    app.get('/meetupUsers', users.getMeetupInfo);
 
     
 
