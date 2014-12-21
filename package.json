@@ -11,6 +11,7 @@
     "body-parser": "~1.0.1",
     "request": "~2.40.0",
     "jade": "*",
-    "usergrid": "*"
+    "usergrid": "*",
+    "crypto": "*"
   }
 }
