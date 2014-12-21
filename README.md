@@ -8,7 +8,7 @@ Before running, make sure you have a `config.js` file with your Apigee credentia
 To run the project locally, run the following:
 
 ```
-npm install
+npm install --no-bin-links
 npm start
 ```
 
