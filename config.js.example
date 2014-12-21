@@ -1,0 +1,4 @@
+exports.organization = "YOUR_ORG_NAME";
+exports.application = "YOUR_APP_NAME";
+exports.clientId = "APP_SERVER_CLIENT_ID";
+exports.clientSecret = "APP_SERVER_CLIENT_SECRET";
