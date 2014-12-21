@@ -1,25 +1,15 @@
-
-
 # where_you_at_server
-Chris is here.
-
+Server-side project for the _Where You At?_ project.
 
 ## Usage
 
-Run locally by typing "node server-usergrid.js". Or deploy to Apigee by creating all the js scripts in your Node.js-based API proxy.
-When running locally you'll need to install the following Node modules: express, request, usergrid, body-parser, crypto. All of these modules are already pre-installed on Apigee Edge platform, so you don't need to care about them.
+Before running, make sure you have a `config.js` file with your Apigee credentials and information for data storage. If you do not have a `config.js` file, copy the `config.js.example` file and modify it with the appropriate information.
 
-You'll need to add the file "config.js" into the root directory, which would contain the authorization info for the Apigee app used for data storage. The content of config.js should be as follows:
+To run the project locally, run the following:
 
-exports.organization = "YOUR_ORG_NAME"
-exports.application = "YOUR_APP_NAME"
-exports.clientId = "APP_SERVER_CLIENT_ID"
-exports.clientSecret = "APP_SERVER_CLIENT_SECRET"
+```
+npm install
+npm start
+```
 
-
-
-## Developing
-
-
-
-### Tools
+The server will start up on port 1337 of the system.
